@@ -7,6 +7,8 @@
 		echo 'window.location.href = "home.php";';
 		echo '</script>'; 
 		exit; // Terminate further execution of the script
+	}else{
+		
 	}
 
 
