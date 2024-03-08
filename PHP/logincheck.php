@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+	session_start();
 	if (!isset($_SESSION['id'])) {
 		// If the session is invalid, redirect the user to the home page
 		echo '<script type="text/javascript">'; 

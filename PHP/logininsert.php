@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['btn_login'])){
     
      $uemail=addslashes($_POST['name']);
@@ -10,7 +11,7 @@ if(isset($_POST['btn_login'])){
      $data=mysqli_num_rows($result);
      if($data>0){
         $row=mysqli_fetch_array($result);
-        session_start();
+        
         $_SESSION['id']=$row['user_id'];
         
         
