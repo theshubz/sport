@@ -1,5 +1,5 @@
 <?php
 
- $con=mysqli_connect("localhost:3310","root","","sportclub");
+ $con=new mysqli("apache.mysql.database.azure.com","aditya0480","@Abhi0480","sportclub");
 
 ?>
