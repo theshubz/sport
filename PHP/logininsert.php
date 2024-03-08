@@ -13,8 +13,8 @@ if(isset($_POST['btn_login'])){
         $row=mysqli_fetch_array($result);
         
         $_SESSION['id']=$row['user_id'];
-        session_start();
         
+        session_start();
         header('Location: ../index1.php');
         exit();
 
