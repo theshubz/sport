@@ -1,24 +1,20 @@
-<?php
-
+<?phpz
 if(isset($_POST['btn_login'])){
     
      $uemail=addslashes($_POST['name']);
      $upass=addslashes($_POST['pass']);
 
      include("./connection_db.php");
-     $con=new mysqli("apache.mysql.database.azure.com","aditya0480","@Abhi0480","sportclub");
-
-     $sql="SELECT * FROM users WHERE user_email='$uemail' AND user_password='$upass'";
+     $sql="SELECT user_id FROM users WHERE user_email='$uemail' AND user_password='$upass'";
      $result=mysqli_query($con,$sql);
      $data=mysqli_num_rows($result);
      if($data>0){
         $row=mysqli_fetch_array($result);
         session_start();
-        //$_SESSION['id']=$row['user_id'];
+        $_SESSION['id']=$row['user_id'];
         
         
         header('Location: ../index1.php');
-        exit();
 
      }
      else{
