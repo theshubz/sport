@@ -16,7 +16,7 @@
   $data=mysqli_query($con,$q);
     if($data){
      
-        echo '<script type="text/javascript">'; 
+        //echo '<script type="text/javascript">'; 
 #echo 'alert("Registration Successfully");'; 
 echo 'window.location.href = "../team_details.php";';
 echo '</script>';
