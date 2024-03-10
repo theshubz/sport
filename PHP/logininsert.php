@@ -4,7 +4,7 @@ if(isset($_POST['btn_login'])){
      $uemail=addslashes($_POST['name']);
      $upass=addslashes($_POST['pass']);
 
-     require_once("./connection_db.php");
+     require_once("connection_db.php");
      $sql="SELECT user_id FROM users WHERE user_email='$uemail' AND user_password='$upass'";
      $result=mysqli_query($con,$sql);
      $data=mysqli_num_rows($result);
