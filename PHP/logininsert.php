@@ -13,7 +13,7 @@ if(!isset($_POST['btn_login'])){
         session_start();
         $_SESSION['id']=$row['user_id'];
         
-        
+     
         header('Location: ../index1.php');
 
      }
