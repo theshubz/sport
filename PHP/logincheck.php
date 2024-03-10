@@ -12,7 +12,8 @@ echo 'window.location.href = "home.php";';
 echo '</script>'; 
 
 	}else{
-		header('Location: ../index1.php')
+		header('Location: ../index1.php');
+		exit();
 	}
 
 
