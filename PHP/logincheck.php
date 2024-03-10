@@ -11,6 +11,8 @@ echo 'alert("Invalid Session");';
 echo 'window.location.href = "home.php";';
 echo '</script>'; 
 
+	}else{
+		header('Location: ../index1.php')
 	}
 
 
