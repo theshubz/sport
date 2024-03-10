@@ -5,7 +5,7 @@
 //echo "session  id =".$_SESSION['id'];
 	//session_start();
 	if (!isset($_SESSION['id'])) {
-		
+		echo $_SESSION[id];
         echo '<script type="text/javascript">'; 
 echo 'alert("Invalid Session");'; 
 echo 'window.location.href = "home.php";';
