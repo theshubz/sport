@@ -1,22 +1,43 @@
+<?php
 if(isset($_POST['btn_login'])){
-    $uemail = addslashes($_POST['name']);
-    $upass = addslashes($_POST['pass']);
+    // Obtain user input
+    $uemail = $_POST['name'];
+    $upass = $_POST['pass'];
 
+    // Include the database connection script
     require_once("connection_db.php");
 
-    $sql = "SELECT user_id FROM users WHERE user_email='$uemail' AND user_password='$upass'";
-    $result = mysqli_query($con, $sql);
-    $data = mysqli_num_rows($result);
+    // Prepare the SQL query using a prepared statement
+    $sql = "SELECT user_id FROM users WHERE user_email=? AND user_password=?";
+    $stmt = $con->prepare($sql);
 
-    if($data > 0){
-        $row = mysqli_fetch_array($result);
+    // Bind parameters and execute the statement
+    $stmt->bind_param("ss", $uemail, $upass);
+    $stmt->execute();
+
+    // Get result
+    $result = $stmt->get_result();
+
+    // Get the number of rows returned
+    $data = $result->num_rows;
+
+    // If user exists, start session and redirect
+    if($data > 0) {
+        $row = $result->fetch_array(MYSQLI_ASSOC);
         session_start();
         $_SESSION['id'] = $row['user_id'];
         header('Location: ../index1.php');
+        exit(); // Ensure script stops executing after redirection
     } else {
+        // If user doesn't exist, display error message
         echo '<script type="text/javascript">'; 
         echo 'alert("Invalid username or password");'; 
         echo 'window.location.href = "../login.php";';
         echo '</script>'; 
+        exit(); // Ensure script stops executing after displaying error
     }
+
+    // Close the statement
+    $stmt->close();
 }
+?>
