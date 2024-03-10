@@ -1,7 +1,7 @@
 <?php
      require_once("connection_db.php");
 
-	session_start();
+	//session_start();
 	if (!isset($_SESSION['id'])) {
 		
         echo '<script type="text/javascript">'; 
