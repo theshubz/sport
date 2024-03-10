@@ -1,5 +1,5 @@
-<?phpz
-if(!isset($_POST['btn_login'])){
+<?php
+if(isset($_POST['btn_login'])){
     
      $uemail=addslashes($_POST['name']);
      $upass=addslashes($_POST['pass']);
@@ -13,7 +13,7 @@ if(!isset($_POST['btn_login'])){
         session_start();
         $_SESSION['id']=$row['user_id'];
         
-     
+        
         header('Location: ../index1.php');
 
      }
