@@ -29,7 +29,7 @@ if(isset($_POST['btn_login'])){
 
         $_SESSION['id'] = $row['user_id'];
         //echo "session  id =".$_SESSION['id'];
-        header('Location: logincheck.php?session_id=' . $_SESSION['id']);
+        header('Location: ../index1.php?session_id=' . $_SESSION['id']);
                 //header('Location: ../index1.php');
         //exit(); // Ensure script stops executing after redirection
     } else {
