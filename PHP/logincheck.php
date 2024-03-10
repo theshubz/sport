@@ -1,6 +1,6 @@
 <?php
      require_once("connection_db.php");
-
+echo "session  id =".$_SESSION['id'];
 	//session_start();
 	if (!isset($_SESSION['id'])) {
 		
