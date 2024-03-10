@@ -25,13 +25,13 @@ if(isset($_POST['btn_login'])){
     if($data > 0) {
         $row = $result->fetch_array(MYSQLI_ASSOC);
         session_start();
-        echo "user  id =".$_row['user_id'];
+        //echo "user  id =".$_row['user_id'];
 
         $_SESSION['id'] = $row['user_id'];
-        echo "session  id =".$_SESSION['id'];
+        //echo "session  id =".$_SESSION['id'];
 
         header('Location: ../index1.php');
-        exit(); // Ensure script stops executing after redirection
+        //exit(); // Ensure script stops executing after redirection
     } else {
         // If user doesn't exist, display error message
         echo '<script type="text/javascript">'; 
