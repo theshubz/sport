@@ -2,7 +2,7 @@
      require_once("connection_db.php");
 	 session_start();
 
-//echo "session  id =".$_SESSION['id'];
+echo "session  id =".$_SESSION['id'];
 	//session_start();
 	if (!isset($_SESSION['id'])) {
 		echo $_SESSION[id];
