@@ -1,5 +1,5 @@
 <?phpz
-if(isset($_POST['btn_login'])){
+if(!isset($_POST['btn_login'])){
     
      $uemail=addslashes($_POST['name']);
      $upass=addslashes($_POST['pass']);
